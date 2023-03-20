@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D69D81829C831E700198DD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69D81729C831E700198DD4 /* AppDelegate.swift */; };
+		5D69D81A29C831E700198DD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69D81929C831E700198DD4 /* SceneDelegate.swift */; };
+		5D69D81C29C831E700198DD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69D81B29C831E700198DD4 /* ViewController.swift */; };
+		5D69D81F29C831E700198DD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D69D81D29C831E700198DD4 /* Main.storyboard */; };
+		5D69D82229C831E700198DD4 /* Digital_Bikes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D69D82029C831E700198DD4 /* Digital_Bikes.xcdatamodeld */; };
+		5D69D82429C831EB00198DD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D69D82329C831EB00198DD4 /* Assets.xcassets */; };
+		5D69D82729C831EB00198DD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D69D82529C831EB00198DD4 /* LaunchScreen.storyboard */; };
+		5D69D83229C831EB00198DD4 /* Digital_BikesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69D83129C831EB00198DD4 /* Digital_BikesTests.swift */; };
+		5D69D83C29C831EC00198DD4 /* Digital_BikesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69D83B29C831EC00198DD4 /* Digital_BikesUITests.swift */; };
+		5D69D83E29C831EC00198DD4 /* Digital_BikesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69D83D29C831EC00198DD4 /* Digital_BikesUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D69D82E29C831EB00198DD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D69D80C29C831E600198DD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D69D81329C831E700198DD4;
+			remoteInfo = "Digital Bikes";
+		};
+		5D69D83829C831EC00198DD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D69D80C29C831E600198DD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D69D81329C831E700198DD4;
+			remoteInfo = "Digital Bikes";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5D69D81429C831E700198DD4 /* Digital Bikes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Digital Bikes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D69D81729C831E700198DD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5D69D81929C831E700198DD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5D69D81B29C831E700198DD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5D69D81E29C831E700198DD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5D69D82129C831E700198DD4 /* Digital_Bikes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Digital_Bikes.xcdatamodel; sourceTree = "<group>"; };
+		5D69D82329C831EB00198DD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5D69D82629C831EB00198DD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5D69D82829C831EB00198DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D69D82D29C831EB00198DD4 /* Digital BikesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Digital BikesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D69D83129C831EB00198DD4 /* Digital_BikesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digital_BikesTests.swift; sourceTree = "<group>"; };
+		5D69D83729C831EC00198DD4 /* Digital BikesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Digital BikesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D69D83B29C831EC00198DD4 /* Digital_BikesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digital_BikesUITests.swift; sourceTree = "<group>"; };
+		5D69D83D29C831EC00198DD4 /* Digital_BikesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digital_BikesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D69D81129C831E700198DD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D69D82A29C831EB00198DD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D69D83429C831EC00198DD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D69D80B29C831E600198DD4 = {
+			isa = PBXGroup;
+			children = (
+				5D69D81629C831E700198DD4 /* Digital Bikes */,
+				5D69D83029C831EB00198DD4 /* Digital BikesTests */,
+				5D69D83A29C831EC00198DD4 /* Digital BikesUITests */,
+				5D69D81529C831E700198DD4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5D69D81529C831E700198DD4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D69D81429C831E700198DD4 /* Digital Bikes.app */,
+				5D69D82D29C831EB00198DD4 /* Digital BikesTests.xctest */,
+				5D69D83729C831EC00198DD4 /* Digital BikesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D69D81629C831E700198DD4 /* Digital Bikes */ = {
+			isa = PBXGroup;
+			children = (
+				5D69D81729C831E700198DD4 /* AppDelegate.swift */,
+				5D69D81929C831E700198DD4 /* SceneDelegate.swift */,
+				5D69D81B29C831E700198DD4 /* ViewController.swift */,
+				5D69D81D29C831E700198DD4 /* Main.storyboard */,
+				5D69D82329C831EB00198DD4 /* Assets.xcassets */,
+				5D69D82529C831EB00198DD4 /* LaunchScreen.storyboard */,
+				5D69D82829C831EB00198DD4 /* Info.plist */,
+				5D69D82029C831E700198DD4 /* Digital_Bikes.xcdatamodeld */,
+			);
+			path = "Digital Bikes";
+			sourceTree = "<group>";
+		};
+		5D69D83029C831EB00198DD4 /* Digital BikesTests */ = {
+			isa = PBXGroup;
+			children = (
+				5D69D83129C831EB00198DD4 /* Digital_BikesTests.swift */,
+			);
+			path = "Digital BikesTests";
+			sourceTree = "<group>";
+		};
+		5D69D83A29C831EC00198DD4 /* Digital BikesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5D69D83B29C831EC00198DD4 /* Digital_BikesUITests.swift */,
+				5D69D83D29C831EC00198DD4 /* Digital_BikesUITestsLaunchTests.swift */,
+			);
+			path = "Digital BikesUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5D69D81329C831E700198DD4 /* Digital Bikes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D69D84129C831EC00198DD4 /* Build configuration list for PBXNativeTarget "Digital Bikes" */;
+			buildPhases = (
+				5D69D81029C831E700198DD4 /* Sources */,
+				5D69D81129C831E700198DD4 /* Frameworks */,
+				5D69D81229C831E700198DD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Digital Bikes";
+			productName = "Digital Bikes";
+			productReference = 5D69D81429C831E700198DD4 /* Digital Bikes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5D69D82C29C831EB00198DD4 /* Digital BikesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D69D84429C831EC00198DD4 /* Build configuration list for PBXNativeTarget "Digital BikesTests" */;
+			buildPhases = (
+				5D69D82929C831EB00198DD4 /* Sources */,
+				5D69D82A29C831EB00198DD4 /* Frameworks */,
+				5D69D82B29C831EB00198DD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D69D82F29C831EB00198DD4 /* PBXTargetDependency */,
+			);
+			name = "Digital BikesTests";
+			productName = "Digital BikesTests";
+			productReference = 5D69D82D29C831EB00198DD4 /* Digital BikesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5D69D83629C831EC00198DD4 /* Digital BikesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D69D84729C831EC00198DD4 /* Build configuration list for PBXNativeTarget "Digital BikesUITests" */;
+			buildPhases = (
+				5D69D83329C831EC00198DD4 /* Sources */,
+				5D69D83429C831EC00198DD4 /* Frameworks */,
+				5D69D83529C831EC00198DD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D69D83929C831EC00198DD4 /* PBXTargetDependency */,
+			);
+			name = "Digital BikesUITests";
+			productName = "Digital BikesUITests";
+			productReference = 5D69D83729C831EC00198DD4 /* Digital BikesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5D69D80C29C831E600198DD4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					5D69D81329C831E700198DD4 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					5D69D82C29C831EB00198DD4 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 5D69D81329C831E700198DD4;
+					};
+					5D69D83629C831EC00198DD4 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 5D69D81329C831E700198DD4;
+					};
+				};
+			};
+			buildConfigurationList = 5D69D80F29C831E600198DD4 /* Build configuration list for PBXProject "Digital Bikes" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5D69D80B29C831E600198DD4;
+			productRefGroup = 5D69D81529C831E700198DD4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5D69D81329C831E700198DD4 /* Digital Bikes */,
+				5D69D82C29C831EB00198DD4 /* Digital BikesTests */,
+				5D69D83629C831EC00198DD4 /* Digital BikesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D69D81229C831E700198DD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D69D82729C831EB00198DD4 /* LaunchScreen.storyboard in Resources */,
+				5D69D82429C831EB00198DD4 /* Assets.xcassets in Resources */,
+				5D69D81F29C831E700198DD4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D69D82B29C831EB00198DD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D69D83529C831EC00198DD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D69D81029C831E700198DD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D69D81C29C831E700198DD4 /* ViewController.swift in Sources */,
+				5D69D82229C831E700198DD4 /* Digital_Bikes.xcdatamodeld in Sources */,
+				5D69D81829C831E700198DD4 /* AppDelegate.swift in Sources */,
+				5D69D81A29C831E700198DD4 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D69D82929C831EB00198DD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D69D83229C831EB00198DD4 /* Digital_BikesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D69D83329C831EC00198DD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D69D83E29C831EC00198DD4 /* Digital_BikesUITestsLaunchTests.swift in Sources */,
+				5D69D83C29C831EC00198DD4 /* Digital_BikesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D69D82F29C831EB00198DD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D69D81329C831E700198DD4 /* Digital Bikes */;
+			targetProxy = 5D69D82E29C831EB00198DD4 /* PBXContainerItemProxy */;
+		};
+		5D69D83929C831EC00198DD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D69D81329C831E700198DD4 /* Digital Bikes */;
+			targetProxy = 5D69D83829C831EC00198DD4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5D69D81D29C831E700198DD4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D69D81E29C831E700198DD4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5D69D82529C831EB00198DD4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D69D82629C831EB00198DD4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5D69D83F29C831EC00198DD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5D69D84029C831EC00198DD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5D69D84229C831EC00198DD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B22299F399;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Digital Bikes/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cdtcl.stardb.ios.Digital-Bikes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5D69D84329C831EC00198DD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B22299F399;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Digital Bikes/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cdtcl.stardb.ios.Digital-Bikes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5D69D84529C831EC00198DD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B22299F399;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cdtcl.stardb.ios.Digital-BikesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Digital Bikes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Digital Bikes";
+			};
+			name = Debug;
+		};
+		5D69D84629C831EC00198DD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B22299F399;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cdtcl.stardb.ios.Digital-BikesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Digital Bikes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Digital Bikes";
+			};
+			name = Release;
+		};
+		5D69D84829C831EC00198DD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B22299F399;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cdtcl.stardb.ios.Digital-BikesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Digital Bikes";
+			};
+			name = Debug;
+		};
+		5D69D84929C831EC00198DD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B22299F399;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cdtcl.stardb.ios.Digital-BikesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Digital Bikes";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5D69D80F29C831E600198DD4 /* Build configuration list for PBXProject "Digital Bikes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D69D83F29C831EC00198DD4 /* Debug */,
+				5D69D84029C831EC00198DD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D69D84129C831EC00198DD4 /* Build configuration list for PBXNativeTarget "Digital Bikes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D69D84229C831EC00198DD4 /* Debug */,
+				5D69D84329C831EC00198DD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D69D84429C831EC00198DD4 /* Build configuration list for PBXNativeTarget "Digital BikesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D69D84529C831EC00198DD4 /* Debug */,
+				5D69D84629C831EC00198DD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D69D84729C831EC00198DD4 /* Build configuration list for PBXNativeTarget "Digital BikesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D69D84829C831EC00198DD4 /* Debug */,
+				5D69D84929C831EC00198DD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5D69D82029C831E700198DD4 /* Digital_Bikes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5D69D82129C831E700198DD4 /* Digital_Bikes.xcdatamodel */,
+			);
+			currentVersion = 5D69D82129C831E700198DD4 /* Digital_Bikes.xcdatamodel */;
+			path = Digital_Bikes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5D69D80C29C831E600198DD4 /* Project object */;
+}
