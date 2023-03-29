@@ -7,6 +7,12 @@
 
 import UIKit
 import CoreData
+import DropDown
+import IQKeyboardManagerSwift
+import FirebaseCore
+import MapKit
+import GoogleMaps
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        DropDown.startListeningToKeyboard()
+        IQKeyboardManager.shared.enable = true
+        FirebaseApp.configure()
+        
+        GMSServices.provideAPIKey("AIzaSyDjNZW1K2bIdsUZBpqrFfXGQHiEKYwaXIs")
+        
+        
         return true
     }
 

@@ -12,6 +12,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                
+            //check if is signed in
+            if false {
+                if let vc = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() {
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true)
+                }
+            }else{
+                if let vc = UIStoryboard(name: "SignIn", bundle: nil).instantiateInitialViewController() {
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true)
+                }
+            }
+            
+        }
+        
     }
 
 
