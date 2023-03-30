@@ -6,7 +6,6 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,7 +44,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oKD-Vp-JWX">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oKD-Vp-JWX" customClass="FPNTextField" customModule="FlagPhoneNumber">
                                                         <rect key="frame" x="0.0" y="88" width="273" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
@@ -55,20 +54,18 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qG1-HY-bXx">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGE-nh-kxl">
                                                         <rect key="frame" x="0.0" y="176" width="273" height="45"/>
                                                         <color key="backgroundColor" name="Primary"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="45" id="7UD-i4-hpa"/>
+                                                            <constraint firstAttribute="height" constant="45" id="tTF-Xq-fFa"/>
                                                         </constraints>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <menu key="menu" id="aji-ud-dna">
-                                                            <children>
-                                                                <command title="Male" id="3bs-jQ-1rP"/>
-                                                                <command title="Female" id="bQy-vy-9XD"/>
-                                                            </children>
-                                                        </menu>
-                                                        <state key="normal" title="Gender"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Select Gender"/>
+                                                        <connections>
+                                                            <action selector="gender_action:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oc1-qV-Vhf"/>
+                                                        </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kdx-5O-Zfl">
                                                         <rect key="frame" x="0.0" y="231" width="273" height="34"/>
@@ -81,26 +78,29 @@
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rfQ-of-Nn6">
-                                                        <rect key="frame" x="0.0" y="319" width="273" height="84"/>
+                                                        <rect key="frame" x="0.0" y="319" width="273" height="128.33333333333337"/>
                                                         <subviews>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="905-MZ-PsE">
-                                                                <rect key="frame" x="0.0" y="26.666666666666629" width="51" height="31"/>
+                                                                <rect key="frame" x="0.0" y="48.666666666666629" width="51" height="31"/>
                                                             </switch>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree to Digital Bikes Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3m-SV-PWK">
-                                                                <rect key="frame" x="59" y="25.333333333333368" width="128" height="33.666666666666657"/>
+                                                                <rect key="frame" x="59" y="47.333333333333371" width="128" height="33.666666666666657"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpg-jk-URY">
-                                                                <rect key="frame" x="197" y="25.000000000000004" width="76" height="34.333333333333343"/>
+                                                                <rect key="frame" x="197" y="47" width="76" height="34.333333333333343"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Read"/>
+                                                                <connections>
+                                                                    <action selector="readPP:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3Sa-PC-NDX"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KVW-gE-QR9">
-                                                        <rect key="frame" x="0.0" y="413" width="273" height="50.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="457.33333333333337" width="273" height="50.333333333333314"/>
                                                         <subviews>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QX5-8V-QDi">
                                                                 <rect key="frame" x="0.0" y="9.6666666666666288" width="51" height="31"/>
@@ -115,17 +115,20 @@
                                                                 <rect key="frame" x="178.66666666666666" y="8" width="94.333333333333343" height="34.333333333333336"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Read"/>
+                                                                <connections>
+                                                                    <action selector="readTC:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zZk-ss-qh9"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please come with your University ID and National ID to complete registration" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksz-Ks-Hvo">
-                                                        <rect key="frame" x="0.0" y="473.33333333333337" width="273" height="31.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="517.66666666666663" width="273" height="31.333333333333371"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DpF-5e-mK3">
-                                                        <rect key="frame" x="0.0" y="514.66666666666663" width="273" height="45"/>
+                                                        <rect key="frame" x="0.0" y="559" width="273" height="45"/>
                                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="8GW-nN-KrG"/>
@@ -137,15 +140,6 @@
                                                             <action selector="sign_up_action:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oD0-Hq-42o"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6H-qE-hl5">
-                                                        <rect key="frame" x="0.0" y="569.66666666666663" width="273" height="34.333333333333371"/>
-                                                        <color key="tintColor" systemColor="labelColor"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="LOGIN LINK"/>
-                                                        <connections>
-                                                            <action selector="login_link:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9CL-7R-E0c"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="S99-dC-wXN" secondAttribute="trailing" id="0kY-zi-AYx"/>
@@ -154,23 +148,21 @@
                                                     <constraint firstAttribute="trailing" secondItem="nSV-mU-ixg" secondAttribute="trailing" id="D6B-NC-s5i"/>
                                                     <constraint firstItem="kdx-5O-Zfl" firstAttribute="leading" secondItem="OBh-Te-2Fs" secondAttribute="leading" id="D87-6B-bqo"/>
                                                     <constraint firstAttribute="trailing" secondItem="D0v-I7-OjE" secondAttribute="trailing" id="KdC-tR-hDS"/>
-                                                    <constraint firstAttribute="trailing" secondItem="qG1-HY-bXx" secondAttribute="trailing" id="L0n-H0-ZK9"/>
                                                     <constraint firstItem="oKD-Vp-JWX" firstAttribute="leading" secondItem="OBh-Te-2Fs" secondAttribute="leading" id="M21-8a-IL5"/>
                                                     <constraint firstAttribute="trailing" secondItem="gRV-qq-L8g" secondAttribute="trailing" id="QLR-2j-RWl"/>
                                                     <constraint firstAttribute="trailing" secondItem="oKD-Vp-JWX" secondAttribute="trailing" id="Qok-Ay-3tX"/>
+                                                    <constraint firstItem="FGE-nh-kxl" firstAttribute="leading" secondItem="OBh-Te-2Fs" secondAttribute="leading" id="RP8-G4-uFh"/>
                                                     <constraint firstItem="gRV-qq-L8g" firstAttribute="leading" secondItem="OBh-Te-2Fs" secondAttribute="leading" id="RyD-Il-0XO"/>
                                                     <constraint firstItem="nSV-mU-ixg" firstAttribute="leading" secondItem="OBh-Te-2Fs" secondAttribute="leading" id="U70-8l-EPB"/>
                                                     <constraint firstAttribute="trailing" secondItem="KVW-gE-QR9" secondAttribute="trailing" id="VeQ-IH-ct2"/>
                                                     <constraint firstItem="D0v-I7-OjE" firstAttribute="leading" secondItem="OBh-Te-2Fs" secondAttribute="leading" id="WpG-BC-WPA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="FGE-nh-kxl" secondAttribute="trailing" id="Yxe-Ak-22r"/>
                                                     <constraint firstItem="DpF-5e-mK3" firstAttribute="leading" secondItem="OBh-Te-2Fs" secondAttribute="leading" id="ejO-z3-asJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="ksz-Ks-Hvo" secondAttribute="trailing" id="ekc-0y-c0g"/>
                                                     <constraint firstItem="ksz-Ks-Hvo" firstAttribute="leading" secondItem="OBh-Te-2Fs" secondAttribute="leading" id="fhb-TW-bss"/>
                                                     <constraint firstItem="rfQ-of-Nn6" firstAttribute="leading" secondItem="OBh-Te-2Fs" secondAttribute="leading" id="g83-WV-T2N"/>
-                                                    <constraint firstItem="qG1-HY-bXx" firstAttribute="leading" secondItem="OBh-Te-2Fs" secondAttribute="leading" id="itO-FP-gaQ"/>
                                                     <constraint firstAttribute="trailing" secondItem="DpF-5e-mK3" secondAttribute="trailing" id="jb0-UV-HRl"/>
                                                     <constraint firstAttribute="trailing" secondItem="kdx-5O-Zfl" secondAttribute="trailing" id="kdY-wT-HTb"/>
-                                                    <constraint firstItem="i6H-qE-hl5" firstAttribute="leading" secondItem="OBh-Te-2Fs" secondAttribute="leading" id="nUH-hv-DEn"/>
-                                                    <constraint firstAttribute="trailing" secondItem="i6H-qE-hl5" secondAttribute="trailing" id="rhM-9U-Gdr"/>
                                                     <constraint firstItem="S99-dC-wXN" firstAttribute="leading" secondItem="OBh-Te-2Fs" secondAttribute="leading" id="xjh-qk-pyd"/>
                                                 </constraints>
                                             </stackView>
@@ -201,8 +193,16 @@
                     </view>
                     <connections>
                         <outlet property="bg" destination="beq-iW-ajc" id="4xK-Iz-Qkf"/>
-                        <outlet property="gender_button" destination="qG1-HY-bXx" id="DlC-IL-Xba"/>
+                        <outlet property="email" destination="kdx-5O-Zfl" id="E09-QC-mhk"/>
+                        <outlet property="fname" destination="nSV-mU-ixg" id="A4t-Tc-5kd"/>
+                        <outlet property="gender_button" destination="FGE-nh-kxl" id="Vsw-Dq-dzq"/>
+                        <outlet property="password" destination="gRV-qq-L8g" id="SE9-V4-l76"/>
+                        <outlet property="phone" destination="oKD-Vp-JWX" id="kMv-vM-HOx"/>
+                        <outlet property="residence" destination="S99-dC-wXN" id="Cro-pv-87O"/>
                         <outlet property="sign_up_button" destination="DpF-5e-mK3" id="MqJ-VM-6Ti"/>
+                        <outlet property="sname" destination="D0v-I7-OjE" id="beb-CK-9Yg"/>
+                        <outlet property="switchPP" destination="905-MZ-PsE" id="axk-Uh-PKg"/>
+                        <outlet property="swtichTC" destination="QX5-8V-QDi" id="sk1-dc-adh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -213,11 +213,8 @@
     <resources>
         <image name="icon" width="84" height="84"/>
         <namedColor name="Primary">
-            <color red="0.13725490196078433" green="0.36470588235294116" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.13699999451637268" green="0.36500000953674316" blue="0.41200000047683716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

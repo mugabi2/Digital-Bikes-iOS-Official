@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class ProfileController: UIViewController {
 
@@ -42,7 +44,10 @@ class ProfileController: UIViewController {
     @IBOutlet weak var sign_out_button: UIButton!
     
     @IBAction func sign_out_action(_ sender: UIButton) {
-        
+        do{
+            try Auth.auth().signOut()
+        }catch{}
+        dismiss(animated: true)
     }
     
     
@@ -69,7 +74,19 @@ class ProfileController: UIViewController {
         
         sign_out_button.layer.cornerRadius = 10
         
+        
+        displayUser()
+        
     }
-
+    @IBOutlet weak var uiPhoneNumber: UILabel!
+    
+    func displayUser(){
+        
+        let defaults = UserDefaults.standard
+        
+        uiPhoneNumber.text = defaults.string(forKey: "phone_number")
+        
+        
+    }
 
 }
