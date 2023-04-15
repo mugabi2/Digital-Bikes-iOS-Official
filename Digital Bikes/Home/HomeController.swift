@@ -9,7 +9,8 @@ import GoogleMaps
 import UIKit
 import MapKit
 import FirebaseFirestore
-
+import FirebaseStorage
+import Agrume
 
 class HomeController: UIViewController, MKMapViewDelegate {
 
@@ -22,11 +23,21 @@ class HomeController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var map_kit: MKMapView!
     
     
+    var posters = [QueryDocumentSnapshot]()
+    var postersUIImages = [Int : UIImage]()
+    @IBOutlet weak var posterCollectionView: UICollectionView!
+    var posterReuse = "PosterViewCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         caution_card.layer.cornerRadius = 10.0
         info_card.layer.cornerRadius = 10.0
+        
+        posterCollectionView.delegate = self
+        posterCollectionView.dataSource = self
+        posterCollectionView.register(UINib(nibName: posterReuse, bundle: nil), forCellWithReuseIdentifier: posterReuse)
+
         
        
         map_kit.delegate = self
@@ -37,15 +48,30 @@ class HomeController: UIViewController, MKMapViewDelegate {
         map_kit.setRegion(region, animated: true)
         
         //map_kit.centerCoordinate = location
-        map_kit.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        //map_kit.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
 
 
         getBikes()
         
         getInformation()
         
+        getPromotions()
     }
     
+    func getPromotions(){
+        
+        let db = Firestore.firestore()
+        db.collection("promotions")
+            .getDocuments { snapshot, error in
+                print("HAPPENING \( snapshot?.count)")
+                if snapshot != nil {
+                    self.posters = snapshot!.documents
+                    self.posterCollectionView.reloadData()
+                }else{
+                }
+            }
+        
+    }
     
     
     func getBikes(){
@@ -83,11 +109,14 @@ class HomeController: UIViewController, MKMapViewDelegate {
 
                 // Loop through the array and create an MKPointAnnotation object for each coordinate
                 for dockingStation in dockingStations {
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = dockingStation.coordinate
-                    annotation.title = dockingStation.name
-                    annotation.subtitle = "\(dockingStation.no_of_bikes ?? "0") Bikes"
-                    self.map_kit.addAnnotation(annotation)
+                    let number_of_bikes_at_station = dockingStation.no_of_bikes ?? "0"
+                    
+                        let annotation = MKPointAnnotation()
+                        annotation.coordinate = dockingStation.coordinate
+                        annotation.title = dockingStation.name
+                        annotation.subtitle = "\(number_of_bikes_at_station) Bikes"
+                        self.map_kit.addAnnotation(annotation)
+                    
                 }
                 
                 
@@ -101,8 +130,97 @@ class HomeController: UIViewController, MKMapViewDelegate {
     func getInformation(){
         
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+          if annotation is MKUserLocation {
+              // Return nil to use default view for user location annotation
+              return nil
+          }
+          
+                let identifier: String
+                var annotationView: MKAnnotationView?
+                
+        
+                print( annotation.subtitle!! )
+                if ( annotation.subtitle!! != "0 Bikes" ) {
+                    identifier = "HasBikesAnnotationView"
+                    annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? HasBikesAnnotationView
+                    if annotationView == nil {
+                        annotationView = HasBikesAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                    }
+                    // Customize the appearance of the restaurant annotation view
+                    //annotationView?.image = UIImage(named: "restaurant-icon")
+                } else {
+                    identifier = "NoBikesAnnotationView"
+                    annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? NoBikesAnnotationView
+                    if annotationView == nil {
+                        annotationView = NoBikesAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                    }
+                    // Customize the appearance of the museum annotation view
+                    //annotationView?.image = UIImage(named: "museum-icon")
+                }
+                
+        
+        
+        
+        
+        
+        
+        
+          annotationView?.canShowCallout = true
+          //annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+          //annotationView?.leftCalloutAccessoryView = UIButton(type: .detailDisclosure)
+          return annotationView
+      }
 
 }
+
+
+extension HomeController : UICollectionViewDelegate,UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let img = self.postersUIImages[indexPath.row] {
+            let agrume = Agrume(image: img)
+            agrume.show(from: self)
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return posters.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: posterReuse, for: indexPath) as! PosterViewCell
+        
+        let imageurl = posters[indexPath.row].get("imageurl") as! String?
+        let storage = Storage.storage()
+        let storageRef = storage.reference().child( imageurl! )
+        storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self] data, error in
+                    guard let self = self else { return }
+                    
+                    if let error = error {
+                        print("Error downloading image: \(error.localizedDescription)")
+                    } else {
+                        if let imageData = data {
+                            // Set the image data as the image of the image view
+                            if let img = UIImage(data: imageData) {
+                                self.postersUIImages[indexPath.row] = img
+                                cell.picture.image = img
+                            }
+                        }
+                    }
+                }
+        
+        return cell
+        
+    }
+    
+}
+
+
+
 
 class DockingStation {
     let name: String
@@ -116,13 +234,13 @@ class DockingStation {
     }
 }
 
-class CustomAnnotationView: MKAnnotationView {
+class HasBikesAnnotationView: MKAnnotationView {
     
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         
         // Set the image property to your custom icon image
-        self.image = UIImage(named: "marker")
+        self.image = UIImage(named: "marko")
         
         // Add subviews to the annotation view if needed
         //let label = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 20))
@@ -130,7 +248,29 @@ class CustomAnnotationView: MKAnnotationView {
         //self.addSubview(label)
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+class NoBikesAnnotationView: MKAnnotationView {
+    
+    override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
+        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        
+        // Set the image property to your custom icon image
+        self.image = UIImage(named: "markrr")
+        
+        // Add subviews to the annotation view if needed
+        //let label = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 20))
+        //label.text = "Custom Label"
+        //self.addSubview(label)
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
