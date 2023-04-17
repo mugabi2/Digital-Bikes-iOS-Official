@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		17110D6D24F5973C988757AE /* Pods_Digital_BikesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E1CB72545746C849BA029C /* Pods_Digital_BikesTests.framework */; };
+		5D2B882E29EB7E3600D4E5F6 /* RentABike.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D2B882D29EB7E3600D4E5F6 /* RentABike.storyboard */; };
+		5D2B883029EB810D00D4E5F6 /* RentABikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B882F29EB810D00D4E5F6 /* RentABikeController.swift */; };
+		5D2B883229EB83F000D4E5F6 /* Theme-Default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D2B883129EB83F000D4E5F6 /* Theme-Default.plist */; };
 		5D40F84F29D268A800C18D0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D40F84E29D268A800C18D0B /* GoogleService-Info.plist */; };
 		5D68E9D629EA08090071C4BA /* PosterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D68E9D429EA08090071C4BA /* PosterViewCell.swift */; };
 		5D68E9D729EA08090071C4BA /* PosterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D68E9D529EA08090071C4BA /* PosterViewCell.xib */; };
@@ -29,6 +32,14 @@
 		5DD8FF1329CB73B90031EB96 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD8FF1229CB73B90031EB96 /* HomeController.swift */; };
 		5DD8FF1529CB73C80031EB96 /* SupportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD8FF1429CB73C80031EB96 /* SupportController.swift */; };
 		5DD8FF1729CB73F30031EB96 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD8FF1629CB73F30031EB96 /* ProfileController.swift */; };
+		5DE9261029EDE4A9001C32E6 /* DigitalTimePacks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DE9260F29EDE4A9001C32E6 /* DigitalTimePacks.storyboard */; };
+		5DE9261229EDE4C2001C32E6 /* DigitalTimePacksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE9261129EDE4C2001C32E6 /* DigitalTimePacksController.swift */; };
+		5DE9261A29EDEC57001C32E6 /* 4640-progress-triangle-loading-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DE9261429EDEC43001C32E6 /* 4640-progress-triangle-loading-animation.json */; };
+		5DE9261B29EDEC57001C32E6 /* lf30_editor_gdRUEk.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DE9261529EDEC47001C32E6 /* lf30_editor_gdRUEk.json */; };
+		5DE9261C29EDEC57001C32E6 /* lf30_editor_aojmvsuf.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DE9261629EDEC4B001C32E6 /* lf30_editor_aojmvsuf.json */; };
+		5DE9261D29EDEC57001C32E6 /* lf30_editor_Xven5E.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DE9261729EDEC4F001C32E6 /* lf30_editor_Xven5E.json */; };
+		5DE9261E29EDEC57001C32E6 /* lf30_editor_3JP9uC.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DE9261829EDEC53001C32E6 /* lf30_editor_3JP9uC.json */; };
+		5DE9261F29EDEC57001C32E6 /* lf30_editor_dt7jnkdq.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DE9261929EDEC57001C32E6 /* lf30_editor_dt7jnkdq.json */; };
 		A1460049F670966E36757849 /* Pods_Digital_Bikes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65F08D2A76266B7550A8918 /* Pods_Digital_Bikes.framework */; };
 		EFA38F5AC035EC0CA75817B3 /* Pods_Digital_Bikes_Digital_BikesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8B2CAE4EE5279264062105 /* Pods_Digital_Bikes_Digital_BikesUITests.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +68,9 @@
 		2D8B2CAE4EE5279264062105 /* Pods_Digital_Bikes_Digital_BikesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digital_Bikes_Digital_BikesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E1CB72545746C849BA029C /* Pods_Digital_BikesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digital_BikesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6D48643C2D1428685E89C5 /* Pods-Digital Bikes-Digital BikesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digital Bikes-Digital BikesUITests.debug.xcconfig"; path = "Target Support Files/Pods-Digital Bikes-Digital BikesUITests/Pods-Digital Bikes-Digital BikesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D2B882D29EB7E3600D4E5F6 /* RentABike.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RentABike.storyboard; sourceTree = "<group>"; };
+		5D2B882F29EB810D00D4E5F6 /* RentABikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentABikeController.swift; sourceTree = "<group>"; };
+		5D2B883129EB83F000D4E5F6 /* Theme-Default.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Theme-Default.plist"; sourceTree = "<group>"; };
 		5D40F84E29D268A800C18D0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5D68E9D429EA08090071C4BA /* PosterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewCell.swift; sourceTree = "<group>"; };
 		5D68E9D529EA08090071C4BA /* PosterViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PosterViewCell.xib; sourceTree = "<group>"; };
@@ -90,6 +104,14 @@
 		5DD8FF1A29CB76C80031EB96 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 		5DD8FF1B29CB76C90031EB96 /* UiView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Extension.swift"; sourceTree = "<group>"; };
 		5DD8FF1C29CB76CA0031EB96 /* UiImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiImageView.swift; sourceTree = "<group>"; };
+		5DE9260F29EDE4A9001C32E6 /* DigitalTimePacks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DigitalTimePacks.storyboard; sourceTree = "<group>"; };
+		5DE9261129EDE4C2001C32E6 /* DigitalTimePacksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalTimePacksController.swift; sourceTree = "<group>"; };
+		5DE9261429EDEC43001C32E6 /* 4640-progress-triangle-loading-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4640-progress-triangle-loading-animation.json"; sourceTree = "<group>"; };
+		5DE9261529EDEC47001C32E6 /* lf30_editor_gdRUEk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_gdRUEk.json; sourceTree = "<group>"; };
+		5DE9261629EDEC4B001C32E6 /* lf30_editor_aojmvsuf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_aojmvsuf.json; sourceTree = "<group>"; };
+		5DE9261729EDEC4F001C32E6 /* lf30_editor_Xven5E.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_Xven5E.json; sourceTree = "<group>"; };
+		5DE9261829EDEC53001C32E6 /* lf30_editor_3JP9uC.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_3JP9uC.json; sourceTree = "<group>"; };
+		5DE9261929EDEC57001C32E6 /* lf30_editor_dt7jnkdq.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_dt7jnkdq.json; sourceTree = "<group>"; };
 		B65F08D2A76266B7550A8918 /* Pods_Digital_Bikes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digital_Bikes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34B7AA32E35372EE8FEE7D6 /* Pods-Digital Bikes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digital Bikes.release.xcconfig"; path = "Target Support Files/Pods-Digital Bikes/Pods-Digital Bikes.release.xcconfig"; sourceTree = "<group>"; };
 		F2F6ED4B3EC7D14547DB45AD /* Pods-Digital BikesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digital BikesTests.release.xcconfig"; path = "Target Support Files/Pods-Digital BikesTests/Pods-Digital BikesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +155,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5D2B882C29EB7E1000D4E5F6 /* RentABike */ = {
+			isa = PBXGroup;
+			children = (
+				5D2B882D29EB7E3600D4E5F6 /* RentABike.storyboard */,
+				5D2B882F29EB810D00D4E5F6 /* RentABikeController.swift */,
+			);
+			path = RentABike;
+			sourceTree = "<group>";
+		};
 		5D68E9D329EA07EB0071C4BA /* Poster */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +198,7 @@
 		5D69D81629C831E700198DD4 /* Digital Bikes */ = {
 			isa = PBXGroup;
 			children = (
+				5DE9261329EDEC1E001C32E6 /* Animations */,
 				5D40F84E29D268A800C18D0B /* GoogleService-Info.plist */,
 				5DD8FF1829CB76A00031EB96 /* Extension */,
 				5DD8FF0929CB73390031EB96 /* Helper */,
@@ -180,6 +212,7 @@
 				5D69D82529C831EB00198DD4 /* LaunchScreen.storyboard */,
 				5D69D82829C831EB00198DD4 /* Info.plist */,
 				5D69D82029C831E700198DD4 /* Digital_Bikes.xcdatamodeld */,
+				5D2B883129EB83F000D4E5F6 /* Theme-Default.plist */,
 			);
 			path = "Digital Bikes";
 			sourceTree = "<group>";
@@ -215,6 +248,8 @@
 		5DD8FF0629CB6AD00031EB96 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5DE9260E29EDE48C001C32E6 /* DigitalTimePacks */,
+				5D2B882C29EB7E1000D4E5F6 /* RentABike */,
 				5D68E9D329EA07EB0071C4BA /* Poster */,
 				5DD8FF0729CB6AE00031EB96 /* Home.storyboard */,
 				5DD8FF1229CB73B90031EB96 /* HomeController.swift */,
@@ -244,6 +279,28 @@
 				5DD8FF1B29CB76C90031EB96 /* UiView+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5DE9260E29EDE48C001C32E6 /* DigitalTimePacks */ = {
+			isa = PBXGroup;
+			children = (
+				5DE9260F29EDE4A9001C32E6 /* DigitalTimePacks.storyboard */,
+				5DE9261129EDE4C2001C32E6 /* DigitalTimePacksController.swift */,
+			);
+			path = DigitalTimePacks;
+			sourceTree = "<group>";
+		};
+		5DE9261329EDEC1E001C32E6 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				5DE9261429EDEC43001C32E6 /* 4640-progress-triangle-loading-animation.json */,
+				5DE9261829EDEC53001C32E6 /* lf30_editor_3JP9uC.json */,
+				5DE9261629EDEC4B001C32E6 /* lf30_editor_aojmvsuf.json */,
+				5DE9261929EDEC57001C32E6 /* lf30_editor_dt7jnkdq.json */,
+				5DE9261529EDEC47001C32E6 /* lf30_editor_gdRUEk.json */,
+				5DE9261729EDEC4F001C32E6 /* lf30_editor_Xven5E.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		90A83F57ED1E43BAF522485A /* Pods */ = {
@@ -371,13 +428,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DD8FF0329CB66280031EB96 /* SignIn.storyboard in Resources */,
+				5D2B882E29EB7E3600D4E5F6 /* RentABike.storyboard in Resources */,
+				5DE9261F29EDEC57001C32E6 /* lf30_editor_dt7jnkdq.json in Resources */,
 				5D69D82729C831EB00198DD4 /* LaunchScreen.storyboard in Resources */,
+				5DE9261029EDE4A9001C32E6 /* DigitalTimePacks.storyboard in Resources */,
 				5D69D82429C831EB00198DD4 /* Assets.xcassets in Resources */,
 				5D68E9D729EA08090071C4BA /* PosterViewCell.xib in Resources */,
+				5DE9261C29EDEC57001C32E6 /* lf30_editor_aojmvsuf.json in Resources */,
+				5DE9261E29EDEC57001C32E6 /* lf30_editor_3JP9uC.json in Resources */,
 				5DD8FF0829CB6AE00031EB96 /* Home.storyboard in Resources */,
 				5D40F84F29D268A800C18D0B /* GoogleService-Info.plist in Resources */,
+				5DE9261A29EDEC57001C32E6 /* 4640-progress-triangle-loading-animation.json in Resources */,
 				5D69D81F29C831E700198DD4 /* Main.storyboard in Resources */,
+				5D2B883229EB83F000D4E5F6 /* Theme-Default.plist in Resources */,
+				5DE9261B29EDEC57001C32E6 /* lf30_editor_gdRUEk.json in Resources */,
 				5DD8FF0529CB676F0031EB96 /* SignUp.storyboard in Resources */,
+				5DE9261D29EDEC57001C32E6 /* lf30_editor_Xven5E.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +605,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DE9261229EDE4C2001C32E6 /* DigitalTimePacksController.swift in Sources */,
+				5D2B883029EB810D00D4E5F6 /* RentABikeController.swift in Sources */,
 				5D69D81C29C831E700198DD4 /* ViewController.swift in Sources */,
 				5D69D82229C831E700198DD4 /* Digital_Bikes.xcdatamodeld in Sources */,
 				5DD8FF1329CB73B90031EB96 /* HomeController.swift in Sources */,

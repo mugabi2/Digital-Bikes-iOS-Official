@@ -131,6 +131,25 @@ class HomeController: UIViewController, MKMapViewDelegate {
         
     }
     
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+            if let annotation = view.annotation {
+                // Handle the callout click here
+                print("Callout clicked: \(annotation.title ?? "")")
+                
+                if let vc = UIStoryboard(name: "RentABike", bundle: .main).instantiateInitialViewController() {
+                    present(vc, animated: true)
+                }
+                
+            }
+        }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+           if let annotation = view.annotation {
+               // Handle the annotation click here
+               print("Annotation clicked: \(annotation.title ?? "")")
+           }
+       }
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
           if annotation is MKUserLocation {
               // Return nil to use default view for user location annotation
@@ -168,6 +187,10 @@ class HomeController: UIViewController, MKMapViewDelegate {
         
         
           annotationView?.canShowCallout = true
+        
+            let button = UIButton(type: .detailDisclosure)
+            annotationView?.rightCalloutAccessoryView = button
+            
           //annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
           //annotationView?.leftCalloutAccessoryView = UIButton(type: .detailDisclosure)
           return annotationView

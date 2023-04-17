@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import Lottie
 
 class ProfileController: UIViewController {
 
@@ -40,6 +41,8 @@ class ProfileController: UIViewController {
     
     @IBOutlet weak var buy_card: UIView!
     
+    @IBOutlet weak var buy_animation: LottieAnimationView!
+    
     
     @IBOutlet weak var sign_out_button: UIButton!
     
@@ -49,7 +52,6 @@ class ProfileController: UIViewController {
         }catch{}
         dismiss(animated: true)
     }
-    
     
     
     
@@ -74,10 +76,37 @@ class ProfileController: UIViewController {
         
         sign_out_button.layer.cornerRadius = 10
         
+        buy_animation.contentMode = .scaleAspectFit
+        buy_animation.loopMode = .loop
+        buy_animation.animationSpeed = 0.5
+        buy_animation.play()
+        
         
         displayUser()
         
+        
+        
+        buy_card.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buy_card_action(_:))))
+        
+        
     }
+    
+    
+    
+    @objc func buy_card_action(_ sender:UITapGestureRecognizer){
+        if let vc = UIStoryboard(name: "DigitalTimePacks", bundle: nil).instantiateInitialViewController() {
+            
+            present(vc, animated: true)
+            
+        }
+    }
+
+
+    
+    
+    
+    
+    
     @IBOutlet weak var uiPhoneNumber: UILabel!
     
     func displayUser(){

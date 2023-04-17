@@ -887,6 +887,7 @@ DEPENDENCIES:
   - GoogleMaps
   - Imaginary
   - IQKeyboardManagerSwift
+  - lottie-ios
   - PusherSwift
   - SKCountryPicker
   - SwiftEventBus
@@ -1007,6 +1008,6 @@ SPEC CHECKSUMS:
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
   YPImagePicker: f36043210c10b0783034eb1947d6e06e31c461e4
 
-PODFILE CHECKSUM: 7969534c0dc187c06091729b8642d014fdbd2285
+PODFILE CHECKSUM: dff7e3b91609a9364541abe708bccc61f5d9a8a3
 
 COCOAPODS: 1.11.3

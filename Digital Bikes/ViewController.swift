@@ -5,6 +5,7 @@
 //  Created by PSE on 20.03.23.
 //
 
+import SwiftTheme
 import UIKit
 
 class ViewController: UIViewController {
@@ -12,6 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        ThemeManager.setTheme(plistName: "Theme-Default", path: .mainBundle)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 

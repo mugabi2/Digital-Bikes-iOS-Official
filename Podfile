@@ -29,6 +29,7 @@ target 'Digital Bikes' do
   
   pod "Agrume"
 
+  pod 'lottie-ios'
   
   
   
