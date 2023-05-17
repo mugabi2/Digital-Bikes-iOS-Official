@@ -3,19 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>221088540215-3s5c1949ukn59r0009nhu63tgt7covlc.apps.googleusercontent.com</string>
+	<string>221088540215-j42ojkdh47a9v1cjnpr2h4ckb8lbo0dv.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.221088540215-3s5c1949ukn59r0009nhu63tgt7covlc</string>
+	<string>com.googleusercontent.apps.221088540215-j42ojkdh47a9v1cjnpr2h4ckb8lbo0dv</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>221088540215-1dqonbec8ujng669jrjm7gpv0o27lbtq.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCF_GrBFpv-PiuAqO6cNKznM0Ge5Xre23A</string>
+	<string>AIzaSyDjNZW1K2bIdsUZBpqrFfXGQHiEKYwaXIs</string>
 	<key>GCM_SENDER_ID</key>
 	<string>221088540215</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.stardb.ios.digitalbikes</string>
+	<string>com.cdtcl.stardb.ios.Digital-Bikes</string>
 	<key>PROJECT_ID</key>
 	<string>digitalbikesint</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:221088540215:ios:c4478c5c6c8844ddfd01b2</string>
+	<string>1:221088540215:ios:e27f18a1fd3bc4dafd01b2</string>
 </dict>
 </plist>

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="qUo-Vr-lc0">
-                                <rect key="frame" x="20" y="99.000000000000028" width="353" height="383.66666666666674"/>
+                                <rect key="frame" x="20" y="99" width="353" height="555.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="8nO-5B-vup">
                                         <rect key="frame" x="78.666666666666686" y="0.0" width="196" height="103.66666666666667"/>
@@ -188,10 +188,31 @@
                                             <constraint firstAttribute="height" constant="240" id="oUZ-6g-aij"/>
                                         </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWK-he-lQf">
+                                        <rect key="frame" x="0.0" y="423.66666666666663" width="353" height="55"/>
+                                        <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="aUu-bp-IG7"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="20 Mins for 500shs">
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="15"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btn500action:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jc1-KO-0bv"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Q87-fp-Nfa">
+                                        <rect key="frame" x="158" y="518.66666666666663" width="37" height="37"/>
+                                        <color key="color" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="pWK-he-lQf" secondAttribute="trailing" id="52T-Br-Rqi"/>
                                     <constraint firstAttribute="trailing" secondItem="FjE-e9-ytc" secondAttribute="trailing" id="BX3-ri-Eri"/>
                                     <constraint firstItem="FjE-e9-ytc" firstAttribute="leading" secondItem="qUo-Vr-lc0" secondAttribute="leading" id="KpZ-el-Wmf"/>
+                                    <constraint firstItem="pWK-he-lQf" firstAttribute="leading" secondItem="qUo-Vr-lc0" secondAttribute="leading" id="Qcz-zu-Mfr"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMu-Ni-vdY">
@@ -216,11 +237,13 @@
                     <connections>
                         <outlet property="animation_hour_glass" destination="dw1-Wo-OLP" id="79z-WO-tgb"/>
                         <outlet property="animation_time_bucket" destination="BJr-ZY-qWR" id="QjK-D2-MUu"/>
+                        <outlet property="btn500" destination="pWK-he-lQf" id="VZ1-bK-aSR"/>
                         <outlet property="card_hour_glass" destination="M7t-bw-6e3" id="Owq-zg-siX"/>
                         <outlet property="card_hour_glass_in" destination="MIC-cc-NlC" id="LeA-qh-6Xo"/>
                         <outlet property="card_time_bucket" destination="9El-gC-hOT" id="r3K-3u-Yus"/>
                         <outlet property="card_time_bucket_in" destination="Cbt-qo-cBE" id="Xb4-RX-5hH"/>
                         <outlet property="sliding_indicator" destination="PMu-Ni-vdY" id="TLc-pv-9W8"/>
+                        <outlet property="uiactivity" destination="Q87-fp-Nfa" id="XZg-B7-CVE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -230,6 +253,7 @@
     </scenes>
     <designables>
         <designable name="BJr-ZY-qWR"/>
+        <designable name="dw1-Wo-OLP"/>
     </designables>
     <resources>
         <image name="bicycle" width="504" height="463"/>

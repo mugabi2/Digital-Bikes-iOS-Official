@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Final Registration Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="FinalRegistrationController" customModule="Digital_Bikes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z66-gZ-ljN">
+                                <rect key="frame" x="60" y="743" width="273" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="a8T-jz-4mT"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="REQUEST AGENT"/>
+                                <connections>
+                                    <action selector="buttonRequestAgent:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qt8-FC-7EZ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYa-iW-egR">
+                                <rect key="frame" x="171.66666666666666" y="79" width="50" height="6"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6" id="hBV-gN-buQ"/>
+                                    <constraint firstAttribute="width" constant="50" id="zda-br-fpQ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Registration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuA-3a-CfV">
+                                <rect key="frame" x="30" y="105" width="333" height="28.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approach an agent with your National ID and Student/Staff ID" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCY-rW-NAi">
+                                <rect key="frame" x="30" y="405.66666666666669" width="333" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="sqh-1e-Kcz">
+                                <rect key="frame" x="178" y="576" width="37" height="37"/>
+                                <color key="color" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="z66-gZ-ljN" secondAttribute="bottom" constant="30" id="IM5-Xx-9nC"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="z66-gZ-ljN" secondAttribute="trailing" constant="60" id="JZR-nX-IkC"/>
+                            <constraint firstItem="z66-gZ-ljN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="60" id="MJr-xy-RNp"/>
+                            <constraint firstAttribute="trailing" secondItem="PCY-rW-NAi" secondAttribute="trailing" constant="30" id="NVi-Hj-e03"/>
+                            <constraint firstItem="YuA-3a-CfV" firstAttribute="top" secondItem="lYa-iW-egR" secondAttribute="bottom" constant="20" id="Qhb-Nn-Zfy"/>
+                            <constraint firstItem="sqh-1e-Kcz" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="QpP-sw-gKT"/>
+                            <constraint firstItem="lYa-iW-egR" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="WqY-ca-fQx"/>
+                            <constraint firstItem="PCY-rW-NAi" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="bzD-cH-Psc"/>
+                            <constraint firstItem="PCY-rW-NAi" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="30" id="dRY-Rf-Brd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YuA-3a-CfV" secondAttribute="trailing" constant="30" id="rxq-ZS-dqb"/>
+                            <constraint firstItem="lYa-iW-egR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="vTD-c7-XCV"/>
+                            <constraint firstItem="YuA-3a-CfV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="wYL-xD-N8h"/>
+                            <constraint firstItem="z66-gZ-ljN" firstAttribute="top" secondItem="sqh-1e-Kcz" secondAttribute="bottom" constant="130" id="yW5-w7-GL2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activity" destination="sqh-1e-Kcz" id="nbk-yD-Lzg"/>
+                        <outlet property="btnRequestAgent" destination="z66-gZ-ljN" id="1o2-eg-H1i"/>
+                        <outlet property="sliderIndicator" destination="lYa-iW-egR" id="Vjn-Il-HF7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-47" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

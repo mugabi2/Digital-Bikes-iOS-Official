@@ -51,12 +51,151 @@ class HomeController: UIViewController, MKMapViewDelegate {
         //map_kit.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
 
 
-        getBikes()
         
         getInformation()
         
         getPromotions()
+        
+        setUpUserListener()
+        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        getBikes()
+        
+        refreshUserInforamtion()
+        
+    }
+    
+    
+    func setUpUserListener(){
+        let db = Firestore.firestore()
+        
+        // Get a reference to the document that you just created
+        let docRef = db.collection("mukusers").document(self.defaults.string(forKey: "phone_number") ?? "")
+        
+        // Listen for changes to the "registration" field
+        docRef.addSnapshotListener { snapshot, error in
+            guard let snapshot = snapshot else {
+                print("Error fetching document: \(error!)")
+                return
+            }
+            
+            //let registration = snapshot.data()?["registration"] as? String
+            //print("Registration value changed to: \(registration ?? "nil")")
+            
+            if let data = snapshot.data() {
+                self.updateUserDefaults(userData: data)
+            }
+            
+        }
+    }
+        
+    
+    //REFRESH INFORMATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    func refreshUserInforamtion(){
+    
+        let db = Firestore.firestore()
+        let email = defaults.string(forKey: "email") ?? ""
+        db.collection("mukusers").whereField("email", isEqualTo: email ).getDocuments() { (querySnapshot, error) in
+            
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            } else {
+                guard let document = querySnapshot?.documents.first else {
+                    print("No user found with that email")
+                    return
+                }
+                
+                let userData = document.data()
+                self.updateUserDefaults(userData: userData)
+                
+                //self.registration = userData["registration"] as! String?
+                self.digital_time = userData["digital_time"] as! String?
+                self.has_rented = userData["has_rented"] as! String?
+                self.time_returned = userData["time_returned"] as! String?
+                self.time_taken = userData["time_taken"] as! String?
+                
+                if self.has_rented  == "yes" {
+                    
+                    self.transaction_id = userData["transaction_id"] as! String?
+                    self.bike_number = userData["bike_number"] as! String?
+                    self.start = userData["start"] as! String?
+                    self.end = userData["end"] as! String?
+                    self.pin = userData["pin"] as! String?
+                    
+                    //SHOW RETURN BIKE SCREEN
+                    showPopUpMessageHelper(controller: self, title: nil, message: "RETURN BIKE")
+                    
+                }else{
+                    
+                    //IS Free to RENT
+                    //showPopUpMessageHelper(controller: self, title: nil, message: "FREE TO RENT")
+                }
+                
+                
+                print("User Data Updated")
+            }
+        }
+        
+    }
+    
+    //PERSON INFO UPDATE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    let defaults = UserDefaults.standard
+    var has_rented : String? = nil
+    var digital_time : String? = nil
+    var time_returned : String? = nil
+    var time_taken : String? = nil
+    var transaction_id : String? = nil
+    var bike_number : String? = nil
+    var start : String? = nil
+    var end : String? = nil
+    var pin : String? = nil
+    var ustation : String? = nil
+    
+    func updateUserDefaults(userData : [String : Any] ){
+        defaults.set(userData["firstname"], forKey: "firstname")
+        defaults.set(userData["surname"], forKey: "surname")
+        defaults.set(userData["phone_number"], forKey: "phone_number")
+        defaults.set(userData["email"], forKey: "email")
+        defaults.set(userData["agent_name"], forKey: "agent_name")
+        defaults.set(userData["agent_code"], forKey: "agent_code")
+        defaults.set(userData["fine_status"], forKey: "fine_status")
+        defaults.set(userData["bicycle_out"], forKey: "bicycle_out")
+        defaults.set(userData["bicycle_number"], forKey: "bicycle_number")
+        defaults.set(userData["helmet"], forKey: "helmet")
+        defaults.set(userData["suspension"], forKey: "suspension")
+        defaults.set(userData["residence"], forKey: "residence")
+        defaults.set(userData["digital_time"], forKey: "digital_time")
+        defaults.set(userData["registration"], forKey: "registration")
+        defaults.set(userData["renting_times"], forKey: "renting_times")
+        defaults.set(userData["free_digital_time"], forKey: "free_digital_time")
+        defaults.set(userData["share_coded"], forKey: "share_coded")
+        defaults.set(userData["preferred_location"], forKey: "preferred_location")
+        defaults.set(userData["earning"], forKey: "earning")
+        defaults.set(userData["gender"], forKey: "gender")
+        defaults.set(userData["date_of_joining"], forKey: "date_of_joining")
+        defaults.set(userData["registered_by"], forKey: "registered_by")
+        defaults.set(userData["fine_times"], forKey: "fine_times")
+        defaults.set(userData["password_recovery"], forKey: "password_recovery")
+        defaults.set(userData["recovery_code"], forKey: "recovery_code")
+        defaults.set(userData["time_riding"], forKey: "time_riding")
+        defaults.set(userData["stars"], forKey: "stars")
+        defaults.set(userData["comment"], forKey: "comment")
+        defaults.set(userData["app_opens"], forKey: "app_opens")
+        defaults.set(userData["profile_photo"], forKey: "profile_photo")
+        defaults.set(userData["profile_photo_url"], forKey: "profile_photo_url")
+        
+        // Synchronize UserDefaults to make sure the values are saved
+        defaults.synchronize()
+    }
+    
+    
+    //PERSON ALREADY RENTED >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    
+    
+    //PERSON CAN RENT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     
     func getPromotions(){
         
@@ -134,11 +273,55 @@ class HomeController: UIViewController, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
             if let annotation = view.annotation {
                 // Handle the callout click here
-                print("Callout clicked: \(annotation.title ?? "")")
                 
-                if let vc = UIStoryboard(name: "RentABike", bundle: .main).instantiateInitialViewController() {
-                    present(vc, animated: true)
+                let annotationTitle = annotation.title ?? ""
+                let annotationSubTitle = annotation.subtitle ?? ""
+                
+                print("Callout clicked: \(annotationTitle)")
+                print("Callout clicked: \(annotationSubTitle)")
+                
+                
+                if self.has_rented  == "yes" {
+                    
+                    //SHOW RETURN BIKE SCREEN
+                    showPopUpMessageHelper(controller: self, title: "\(annotation.title ?? "")", message: "RETURN BIKE")
+                    
+                }else{
+                    
+                    //if there is a bike
+                    let numberOfBikes = annotationSubTitle?.replacingOccurrences(of: " Bikes", with: "").trimmingCharacters(in: .whitespaces)
+                    print( "BikesNow:\( numberOfBikes ?? "" )")
+                    
+                    if (numberOfBikes != "0"){
+                        
+                        self.ustation = annotationTitle;
+                        //ustationcode="1";
+                        
+                        if( self.defaults.string(forKey: "registration") != "0" ){
+                            //already registered
+                            if let vc = UIStoryboard(name: "RentABike", bundle: .main).instantiateInitialViewController() {
+                                let controller = vc as! RentABikeController
+                                controller.ustation = annotationTitle
+                                present(controller, animated: true)
+                            }
+                        } else {
+                            //register user
+                            if let vc = UIStoryboard(name: "FinalRegistration", bundle: .main).instantiateInitialViewController() {
+                                let controller = vc as! FinalRegistrationController
+                                controller.ustation = annotationTitle
+                                present(controller, animated: true)
+                            }
+                        }
+                        
+                    }else{
+                        //no bike
+                        showPopUpMessageHelper(controller: self, title: "\(annotation.title ?? "")", message: "There is no Bike on this Station")
+                    }
+                    
                 }
+                
+                
+                
                 
             }
         }
@@ -168,7 +351,7 @@ class HomeController: UIViewController, MKMapViewDelegate {
                         annotationView = HasBikesAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                     }
                     // Customize the appearance of the restaurant annotation view
-                    //annotationView?.image = UIImage(named: "restaurant-icon")
+                    // annotationView?.image = UIImage(named: "restaurant-icon")
                 } else {
                     identifier = "NoBikesAnnotationView"
                     annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? NoBikesAnnotationView
@@ -176,7 +359,7 @@ class HomeController: UIViewController, MKMapViewDelegate {
                         annotationView = NoBikesAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                     }
                     // Customize the appearance of the museum annotation view
-                    //annotationView?.image = UIImage(named: "museum-icon")
+                    // annotationView?.image = UIImage(named: "museum-icon")
                 }
                 
         

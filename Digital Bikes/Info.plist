@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Digital Bikes wants to use your Location to show you close stations</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Digital Bikes wants to use your Location to show you close stations</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Digital Bikes wants to use your camera to take a picture</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Digital Bikes wants to pick a picture from your Photo Library</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Digital Bikes wants to use your microphone to record audio</string>
 	<key>MKDirectionsApplicationSupportedModes</key>
 	<array/>
 	<key>UIApplicationSceneManifest</key>

@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		17110D6D24F5973C988757AE /* Pods_Digital_BikesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E1CB72545746C849BA029C /* Pods_Digital_BikesTests.framework */; };
+		5D17282F2A0E063300E8613F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D17282E2A0E063200E8613F /* GoogleService-Info.plist */; };
+		5D1728322A0F54F600E8613F /* FinalRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1728312A0F54F600E8613F /* FinalRegistration.storyboard */; };
+		5D1728342A0F56C000E8613F /* FinalRegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1728332A0F56C000E8613F /* FinalRegistrationController.swift */; };
 		5D2B882E29EB7E3600D4E5F6 /* RentABike.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D2B882D29EB7E3600D4E5F6 /* RentABike.storyboard */; };
 		5D2B883029EB810D00D4E5F6 /* RentABikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B882F29EB810D00D4E5F6 /* RentABikeController.swift */; };
 		5D2B883229EB83F000D4E5F6 /* Theme-Default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D2B883129EB83F000D4E5F6 /* Theme-Default.plist */; };
-		5D40F84F29D268A800C18D0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D40F84E29D268A800C18D0B /* GoogleService-Info.plist */; };
+		5D40F84F29D268A800C18D0B /* GoogleService-Info-OLD.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D40F84E29D268A800C18D0B /* GoogleService-Info-OLD.plist */; };
 		5D68E9D629EA08090071C4BA /* PosterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D68E9D429EA08090071C4BA /* PosterViewCell.swift */; };
 		5D68E9D729EA08090071C4BA /* PosterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D68E9D529EA08090071C4BA /* PosterViewCell.xib */; };
 		5D69D81829C831E700198DD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69D81729C831E700198DD4 /* AppDelegate.swift */; };
@@ -68,10 +71,14 @@
 		2D8B2CAE4EE5279264062105 /* Pods_Digital_Bikes_Digital_BikesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digital_Bikes_Digital_BikesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E1CB72545746C849BA029C /* Pods_Digital_BikesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digital_BikesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6D48643C2D1428685E89C5 /* Pods-Digital Bikes-Digital BikesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digital Bikes-Digital BikesUITests.debug.xcconfig"; path = "Target Support Files/Pods-Digital Bikes-Digital BikesUITests/Pods-Digital Bikes-Digital BikesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D13D5292A13330A0059FA53 /* Digital Bikes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Digital Bikes.entitlements"; sourceTree = "<group>"; };
+		5D17282E2A0E063200E8613F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5D1728312A0F54F600E8613F /* FinalRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinalRegistration.storyboard; sourceTree = "<group>"; };
+		5D1728332A0F56C000E8613F /* FinalRegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalRegistrationController.swift; sourceTree = "<group>"; };
 		5D2B882D29EB7E3600D4E5F6 /* RentABike.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RentABike.storyboard; sourceTree = "<group>"; };
 		5D2B882F29EB810D00D4E5F6 /* RentABikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentABikeController.swift; sourceTree = "<group>"; };
 		5D2B883129EB83F000D4E5F6 /* Theme-Default.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Theme-Default.plist"; sourceTree = "<group>"; };
-		5D40F84E29D268A800C18D0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5D40F84E29D268A800C18D0B /* GoogleService-Info-OLD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-OLD.plist"; sourceTree = "<group>"; };
 		5D68E9D429EA08090071C4BA /* PosterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewCell.swift; sourceTree = "<group>"; };
 		5D68E9D529EA08090071C4BA /* PosterViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PosterViewCell.xib; sourceTree = "<group>"; };
 		5D69D81429C831E700198DD4 /* Digital Bikes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Digital Bikes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +162,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5D1728302A0F54BB00E8613F /* FinalRegistration */ = {
+			isa = PBXGroup;
+			children = (
+				5D1728312A0F54F600E8613F /* FinalRegistration.storyboard */,
+				5D1728332A0F56C000E8613F /* FinalRegistrationController.swift */,
+			);
+			path = FinalRegistration;
+			sourceTree = "<group>";
+		};
 		5D2B882C29EB7E1000D4E5F6 /* RentABike */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,8 +214,10 @@
 		5D69D81629C831E700198DD4 /* Digital Bikes */ = {
 			isa = PBXGroup;
 			children = (
+				5D13D5292A13330A0059FA53 /* Digital Bikes.entitlements */,
 				5DE9261329EDEC1E001C32E6 /* Animations */,
-				5D40F84E29D268A800C18D0B /* GoogleService-Info.plist */,
+				5D40F84E29D268A800C18D0B /* GoogleService-Info-OLD.plist */,
+				5D17282E2A0E063200E8613F /* GoogleService-Info.plist */,
 				5DD8FF1829CB76A00031EB96 /* Extension */,
 				5DD8FF0929CB73390031EB96 /* Helper */,
 				5DD8FF0629CB6AD00031EB96 /* Home */,
@@ -248,6 +266,7 @@
 		5DD8FF0629CB6AD00031EB96 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5D1728302A0F54BB00E8613F /* FinalRegistration */,
 				5DE9260E29EDE48C001C32E6 /* DigitalTimePacks */,
 				5D2B882C29EB7E1000D4E5F6 /* RentABike */,
 				5D68E9D329EA07EB0071C4BA /* Poster */,
@@ -436,8 +455,10 @@
 				5D68E9D729EA08090071C4BA /* PosterViewCell.xib in Resources */,
 				5DE9261C29EDEC57001C32E6 /* lf30_editor_aojmvsuf.json in Resources */,
 				5DE9261E29EDEC57001C32E6 /* lf30_editor_3JP9uC.json in Resources */,
+				5D1728322A0F54F600E8613F /* FinalRegistration.storyboard in Resources */,
 				5DD8FF0829CB6AE00031EB96 /* Home.storyboard in Resources */,
-				5D40F84F29D268A800C18D0B /* GoogleService-Info.plist in Resources */,
+				5D17282F2A0E063300E8613F /* GoogleService-Info.plist in Resources */,
+				5D40F84F29D268A800C18D0B /* GoogleService-Info-OLD.plist in Resources */,
 				5DE9261A29EDEC57001C32E6 /* 4640-progress-triangle-loading-animation.json in Resources */,
 				5D69D81F29C831E700198DD4 /* Main.storyboard in Resources */,
 				5D2B883229EB83F000D4E5F6 /* Theme-Default.plist in Resources */,
@@ -606,6 +627,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DE9261229EDE4C2001C32E6 /* DigitalTimePacksController.swift in Sources */,
+				5D1728342A0F56C000E8613F /* FinalRegistrationController.swift in Sources */,
 				5D2B883029EB810D00D4E5F6 /* RentABikeController.swift in Sources */,
 				5D69D81C29C831E700198DD4 /* ViewController.swift in Sources */,
 				5D69D82229C831E700198DD4 /* Digital_Bikes.xcdatamodeld in Sources */,
@@ -792,9 +814,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Digital Bikes/Digital Bikes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 39TJK8AT3D;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = V28K7994ND;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Digital Bikes/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -806,8 +829,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cdtcl.stardb.ios.Digital-Bikes";
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stardb.ios.digitalbikes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -821,9 +844,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Digital Bikes/Digital Bikes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 39TJK8AT3D;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = V28K7994ND;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Digital Bikes/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -835,8 +859,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cdtcl.stardb.ios.Digital-Bikes";
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stardb.ios.digitalbikes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

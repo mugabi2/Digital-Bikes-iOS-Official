@@ -16,6 +16,12 @@ class SignInController: UIViewController {
     @IBOutlet weak var password: UITextField!
     
     
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+    
+    @IBOutlet weak var button_container: UIStackView!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +31,7 @@ class SignInController: UIViewController {
         
         self.getTheUserFromAuth()
         
+        self.activity.stopAnimating()
     }
     
     func getTheUserFromAuth(){
@@ -60,6 +67,10 @@ class SignInController: UIViewController {
     }
     
     func saveUserValuesToDefaults(email: String, defaults: UserDefaults) {
+        
+        
+        
+        
         
         let db = Firestore.firestore()
         
@@ -146,10 +157,28 @@ class SignInController: UIViewController {
             return
         }
         
+        self.activity.startAnimating()
+        self.button_container.isHidden = true
+        
         Auth.auth().signIn(withEmail: email.text ?? "", password: password.text ?? "")
         { [weak self] authResult, error in
             guard let strongSelf = self else { return }
-            self?.getTheUserFromAuth()
+            
+            if let error = error {
+                // Sign-in failed
+                print("Sign-in error: \(error.localizedDescription)")
+                strongSelf.button_container.isHidden = false
+                strongSelf.activity.stopAnimating()
+                showPopUpMessageHelper(controller: self,
+                                       title: "Failed to Sign In",
+                                       message: error.localizedDescription)
+              } else {
+                // Sign-in successful
+                print("Sign-in successful")
+                strongSelf.getTheUserFromAuth()
+              }
+            
+            
         }
         
         

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cs6-CK-eHE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cs6-CK-eHE">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MS6-nG-wkM">
-                                <rect key="frame" x="30" y="193" width="333" height="466"/>
+                                <rect key="frame" x="30" y="178" width="333" height="496"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="ZZc-Pp-FeI">
                                         <rect key="frame" x="116.66666666666666" y="0.0" width="100" height="100"/>
@@ -51,10 +52,10 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfh-bh-f8a">
-                                        <rect key="frame" x="10" y="178" width="313" height="288"/>
+                                        <rect key="frame" x="10" y="178" width="313" height="318"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cjk-L6-wtn">
-                                                <rect key="frame" x="20" y="20" width="273" height="248"/>
+                                                <rect key="frame" x="20" y="20" width="273" height="278"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-account-100" translatesAutoresizingMaskIntoConstraints="NO" id="VZq-9a-Jfq">
                                                         <rect key="frame" x="111.66666666666666" y="0.0" width="50" height="50"/>
@@ -74,40 +75,46 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdQ-Iq-rH7">
-                                                        <rect key="frame" x="0.0" y="148" width="273" height="45"/>
-                                                        <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="45" id="4q4-Qd-KPt"/>
-                                                        </constraints>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="LOGIN"/>
-                                                        <connections>
-                                                            <action selector="login_action:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UHi-cu-0eI"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfC-BN-Jot">
-                                                        <rect key="frame" x="0.0" y="203" width="273" height="45"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="45" id="ZuV-Bq-8oO"/>
-                                                        </constraints>
-                                                        <color key="tintColor" systemColor="labelColor"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Register"/>
-                                                        <connections>
-                                                            <action selector="register_action:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xD0-0g-G0d"/>
-                                                        </connections>
-                                                    </button>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ovo-wi-jbO">
+                                                        <rect key="frame" x="126.66666666666666" y="148" width="20" height="20"/>
+                                                    </activityIndicatorView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b4w-W9-06b">
+                                                        <rect key="frame" x="10" y="178" width="253" height="100"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdQ-Iq-rH7">
+                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="45"/>
+                                                                <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="45" id="4q4-Qd-KPt"/>
+                                                                </constraints>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="LOGIN"/>
+                                                                <connections>
+                                                                    <action selector="login_action:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UHi-cu-0eI"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfC-BN-Jot">
+                                                                <rect key="frame" x="0.0" y="55" width="253" height="45"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="45" id="ZuV-Bq-8oO"/>
+                                                                </constraints>
+                                                                <color key="tintColor" systemColor="labelColor"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Register"/>
+                                                                <connections>
+                                                                    <action selector="register_action:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xD0-0g-G0d"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="zdQ-Iq-rH7" secondAttribute="trailing" id="1UA-SL-FOQ"/>
-                                                    <constraint firstItem="zdQ-Iq-rH7" firstAttribute="leading" secondItem="Cjk-L6-wtn" secondAttribute="leading" id="7hX-ph-OUm"/>
-                                                    <constraint firstItem="KfC-BN-Jot" firstAttribute="leading" secondItem="Cjk-L6-wtn" secondAttribute="leading" id="CY5-EV-mlA"/>
                                                     <constraint firstItem="7vi-Zj-1DB" firstAttribute="leading" secondItem="Cjk-L6-wtn" secondAttribute="leading" id="MXg-C6-W1z"/>
-                                                    <constraint firstAttribute="trailing" secondItem="KfC-BN-Jot" secondAttribute="trailing" id="Rwn-ln-OwA"/>
+                                                    <constraint firstItem="b4w-W9-06b" firstAttribute="leading" secondItem="Cjk-L6-wtn" secondAttribute="leading" constant="10" id="QJi-PL-qRR"/>
                                                     <constraint firstAttribute="trailing" secondItem="7vi-Zj-1DB" secondAttribute="trailing" id="ieY-IG-lah"/>
                                                     <constraint firstItem="rhj-BM-aqa" firstAttribute="leading" secondItem="Cjk-L6-wtn" secondAttribute="leading" id="r1f-y1-EfH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="b4w-W9-06b" secondAttribute="trailing" constant="10" id="sM4-8C-fhN"/>
                                                     <constraint firstAttribute="trailing" secondItem="rhj-BM-aqa" secondAttribute="trailing" id="sur-OJ-SBD"/>
                                                 </constraints>
                                             </stackView>
@@ -138,7 +145,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sign In" id="U1c-oo-tAM"/>
                     <connections>
+                        <outlet property="activity" destination="ovo-wi-jbO" id="JFZ-DM-Y85"/>
                         <outlet property="bg" destination="Tfh-bh-f8a" id="8tr-pj-oWc"/>
+                        <outlet property="button_container" destination="b4w-W9-06b" id="wae-p1-g62"/>
                         <outlet property="email" destination="7vi-Zj-1DB" id="JNJ-MK-g98"/>
                         <outlet property="login_button" destination="zdQ-Iq-rH7" id="bf9-sG-SZ9"/>
                         <outlet property="password" destination="rhj-BM-aqa" id="wz6-bR-rz0"/>

@@ -6,6 +6,7 @@
 //
 
 import SwiftTheme
+import FirebaseAuth
 import UIKit
 
 class ViewController: UIViewController {
@@ -18,8 +19,10 @@ class ViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 
+            
+            
             //check if is signed in
-            if false {
+            if Auth.auth().currentUser != nil {
                 if let vc = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() {
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true)
