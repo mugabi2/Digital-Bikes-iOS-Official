@@ -168,7 +168,6 @@ class RentABikeController: UIViewController {
             let duration = Double( self.tvduration ?? "" )
             
             if time_current ?? 0.0 >= duration ?? 0.0 {
-                showPopUpMessageHelper(controller: self, title: "Look Ready", message: "Proceed to Use")
                 
                 let dataOne : [String : String] = [
                     "phone_number": phone_number,
@@ -263,26 +262,19 @@ class RentABikeController: UIViewController {
                 return
             }
             
-            let registration = snapshot.data()?["registration"] as? String
-            print("Registration value changed to: \(registration ?? "nil")")
+            let has_rented = snapshot.data()?["has_rented"] as? String
+            //print("Registration value changed to: \(registration ?? "nil")")
             
-            self.dismiss(animated: true)
+            if has_rented == "yes" {
+                self.dismiss(animated: true)
+            }
             
-            /*if registration == "1" {
-                
-                let alertController = UIAlertController(title: "Successful", message: "You can now proceed to get a bike", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-                    self.defaults.set(registration ?? "", forKey: "registration")
-                    self.dismiss(animated: true)
-                    //self.deleteRequestAgent()
-                }
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
-
-            }*/
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        deleteRequestAgent()
+    }
     
     func deleteRequestAgent(){
         // Get a reference to the Firestore database

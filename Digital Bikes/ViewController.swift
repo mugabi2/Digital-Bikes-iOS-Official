@@ -17,10 +17,14 @@ class ViewController: UIViewController {
         
         ThemeManager.setTheme(plistName: "Theme-Default", path: .mainBundle)
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 
-            
-            
             //check if is signed in
             if Auth.auth().currentUser != nil {
                 if let vc = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() {

@@ -31,6 +31,7 @@ class SignUpController: UIViewController {
     
     @IBOutlet weak var swtichTC: UISwitch!
     
+    @IBOutlet weak var uiactivity: UIActivityIndicatorView!
     
     
     
@@ -60,6 +61,11 @@ class SignUpController: UIViewController {
             if ( phoneNumber == "+(null)(null)") {
                 showPopUpMessageHelper(controller: self, title: "Phone Number", message: "Enter a valid Phone Number")
             }else{
+                
+                uiactivity?.isHidden = false
+                uiactivity?.startAnimating()
+                sign_up_button?.isHidden = true
+                
                 Auth.auth().createUser(withEmail: email.text ?? "", password: password.text ?? "")
                     { [weak self] authResult, error in
                         guard let strongSelf = self else { return }
@@ -113,6 +119,8 @@ class SignUpController: UIViewController {
                                 // Handle the error
                                 print("Error adding document: \(error.localizedDescription)")
                                 showPopUpMessageHelper(controller: strongSelf, title: "Error", message: "Data failed to Save")
+                                strongSelf.uiactivity?.stopAnimating()
+                                strongSelf.sign_up_button?.isHidden = false
                             } else {
                                 // Document added successfully
                                 print("Document added successfully")
@@ -182,6 +190,8 @@ class SignUpController: UIViewController {
         bg.layer.cornerRadius = 10
 
         title = "Sign Up"
+        
+        uiactivity?.stopAnimating()
     
     }
     
@@ -278,7 +288,11 @@ class SignUpController: UIViewController {
                 // Synchronize UserDefaults to make sure the values are saved
                 defaults.synchronize()
                 
+                self.uiactivity?.stopAnimating()
+                self.sign_up_button?.isHidden = false
+                
                 self.goToHome()
+                
                 
                 print("User values saved to UserDefaults")
             }
@@ -298,5 +312,13 @@ class SignUpController: UIViewController {
 func showPopUpMessageHelper(controller:UIViewController?, title: String?, message: String?, button: String? = "OK"){
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: button, style: .default, handler: nil) )
+    
+    // Check if the device is iPad
+    if let popoverPresentationController = alert.popoverPresentationController {
+        popoverPresentationController.sourceView = controller?.view // Set the source view to the view of the presenting view controller
+        popoverPresentationController.sourceRect = CGRect(x: controller?.view.bounds.midX ?? 0, y: controller?.view.bounds.midY ?? 0, width: 0, height: 0) // Set the source rect to the center of the presenting view controller's view
+        popoverPresentationController.permittedArrowDirections = [] // Remove the arrow direction
+    }
+    
     controller?.present(alert, animated: true, completion: nil)
 }

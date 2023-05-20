@@ -27,6 +27,10 @@
 		5D69D83229C831EB00198DD4 /* Digital_BikesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69D83129C831EB00198DD4 /* Digital_BikesTests.swift */; };
 		5D69D83C29C831EC00198DD4 /* Digital_BikesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69D83B29C831EC00198DD4 /* Digital_BikesUITests.swift */; };
 		5D69D83E29C831EC00198DD4 /* Digital_BikesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69D83D29C831EC00198DD4 /* Digital_BikesUITestsLaunchTests.swift */; };
+		5D7502E52A19553A0024B3FF /* ReturnABike.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D7502E42A19553A0024B3FF /* ReturnABike.storyboard */; };
+		5D7502E72A1955590024B3FF /* ReturnABikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7502E62A1955590024B3FF /* ReturnABikeController.swift */; };
+		5DC09D5A2A159AE5003FA0C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC09D592A159AE5003FA0C4 /* Constants.swift */; };
+		5DC09D5C2A159AFC003FA0C4 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC09D5B2A159AFC003FA0C4 /* Helpers.swift */; };
 		5DD8FF0329CB66280031EB96 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DD8FF0229CB66280031EB96 /* SignIn.storyboard */; };
 		5DD8FF0529CB676F0031EB96 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DD8FF0429CB676F0031EB96 /* SignUp.storyboard */; };
 		5DD8FF0829CB6AE00031EB96 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DD8FF0729CB6AE00031EB96 /* Home.storyboard */; };
@@ -95,6 +99,10 @@
 		5D69D83729C831EC00198DD4 /* Digital BikesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Digital BikesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D69D83B29C831EC00198DD4 /* Digital_BikesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digital_BikesUITests.swift; sourceTree = "<group>"; };
 		5D69D83D29C831EC00198DD4 /* Digital_BikesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digital_BikesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5D7502E42A19553A0024B3FF /* ReturnABike.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReturnABike.storyboard; sourceTree = "<group>"; };
+		5D7502E62A1955590024B3FF /* ReturnABikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnABikeController.swift; sourceTree = "<group>"; };
+		5DC09D592A159AE5003FA0C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5DC09D5B2A159AFC003FA0C4 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5DD8FF0229CB66280031EB96 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		5DD8FF0429CB676F0031EB96 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		5DD8FF0729CB6AE00031EB96 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -231,6 +239,8 @@
 				5D69D82829C831EB00198DD4 /* Info.plist */,
 				5D69D82029C831E700198DD4 /* Digital_Bikes.xcdatamodeld */,
 				5D2B883129EB83F000D4E5F6 /* Theme-Default.plist */,
+				5DC09D592A159AE5003FA0C4 /* Constants.swift */,
+				5DC09D5B2A159AFC003FA0C4 /* Helpers.swift */,
 			);
 			path = "Digital Bikes";
 			sourceTree = "<group>";
@@ -252,6 +262,15 @@
 			path = "Digital BikesUITests";
 			sourceTree = "<group>";
 		};
+		5D7502E32A1954EB0024B3FF /* ReturnABike */ = {
+			isa = PBXGroup;
+			children = (
+				5D7502E42A19553A0024B3FF /* ReturnABike.storyboard */,
+				5D7502E62A1955590024B3FF /* ReturnABikeController.swift */,
+			);
+			path = ReturnABike;
+			sourceTree = "<group>";
+		};
 		5DD8FF0129CB66170031EB96 /* Access */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +285,7 @@
 		5DD8FF0629CB6AD00031EB96 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5D7502E32A1954EB0024B3FF /* ReturnABike */,
 				5D1728302A0F54BB00E8613F /* FinalRegistration */,
 				5DE9260E29EDE48C001C32E6 /* DigitalTimePacks */,
 				5D2B882C29EB7E1000D4E5F6 /* RentABike */,
@@ -447,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DD8FF0329CB66280031EB96 /* SignIn.storyboard in Resources */,
+				5D7502E52A19553A0024B3FF /* ReturnABike.storyboard in Resources */,
 				5D2B882E29EB7E3600D4E5F6 /* RentABike.storyboard in Resources */,
 				5DE9261F29EDEC57001C32E6 /* lf30_editor_dt7jnkdq.json in Resources */,
 				5D69D82729C831EB00198DD4 /* LaunchScreen.storyboard in Resources */,
@@ -632,12 +653,15 @@
 				5D69D81C29C831E700198DD4 /* ViewController.swift in Sources */,
 				5D69D82229C831E700198DD4 /* Digital_Bikes.xcdatamodeld in Sources */,
 				5DD8FF1329CB73B90031EB96 /* HomeController.swift in Sources */,
+				5D7502E72A1955590024B3FF /* ReturnABikeController.swift in Sources */,
 				5D68E9D629EA08090071C4BA /* PosterViewCell.swift in Sources */,
 				5DD8FF1529CB73C80031EB96 /* SupportController.swift in Sources */,
 				5D69D81829C831E700198DD4 /* AppDelegate.swift in Sources */,
 				5DD8FF1729CB73F30031EB96 /* ProfileController.swift in Sources */,
 				5DD8FF0F29CB739C0031EB96 /* SignInController.swift in Sources */,
+				5DC09D5A2A159AE5003FA0C4 /* Constants.swift in Sources */,
 				5D69D81A29C831E700198DD4 /* SceneDelegate.swift in Sources */,
+				5DC09D5C2A159AFC003FA0C4 /* Helpers.swift in Sources */,
 				5DD8FF1129CB73AB0031EB96 /* SignUpController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -816,7 +840,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Digital Bikes/Digital Bikes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = V28K7994ND;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Digital Bikes/Info.plist";
@@ -825,11 +849,12 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardb.ios.digitalbikes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -846,7 +871,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Digital Bikes/Digital Bikes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = V28K7994ND;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Digital Bikes/Info.plist";
@@ -855,11 +880,12 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardb.ios.digitalbikes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

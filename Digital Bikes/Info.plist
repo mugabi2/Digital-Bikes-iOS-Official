@@ -7,11 +7,11 @@
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Digital Bikes wants to use your Location to show you close stations</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Digital Bikes wants to use your camera to take a picture</string>
+	<string>Digital Bikes wants to use your camera to take a picture to put on your profile</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Digital Bikes wants to pick a picture from your Photo Library</string>
+	<string>Digital Bikes wants to pick a picture from your Photo Library to put on your profile</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Digital Bikes wants to use your microphone to record audio</string>
+	<string>Digital Bikes wants to use your microphone to record audio  to share with others</string>
 	<key>MKDirectionsApplicationSupportedModes</key>
 	<array/>
 	<key>UIApplicationSceneManifest</key>

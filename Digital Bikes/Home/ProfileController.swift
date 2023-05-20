@@ -60,6 +60,34 @@ class ProfileController: UIViewController {
         dismiss(animated: true)
     }
     
+    @IBAction func delete_account_action(_ sender: Any) {
+        
+        // Create the alert controller
+        let alertController = UIAlertController(
+            title: "Delete Account?",
+            message: "This action cannot be undone, because all your information shall be removed from our servers. Are you sure you want to delete your account?",
+            preferredStyle: .alert)
+
+        // Create the actions
+        let action1 = UIAlertAction(title: "Delete Account", style: .destructive) { _ in
+            // Handle action 1
+            
+            do{
+                try Auth.auth().signOut()
+            }catch{}
+            self.dismiss(animated: true)
+            
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+
+        // Add the actions to the alert controller
+        alertController.addAction(action1)
+        alertController.addAction(cancelAction)
+
+        // Present the alert controller
+        self.present(alertController, animated: true)
+
+    }
     
     
     
@@ -88,14 +116,37 @@ class ProfileController: UIViewController {
         
         displayUser()
         
-        
-        
         buy_card.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buy_card_action(_:))))
         
         profile_edit.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profile_edit_action(_:))))
         
+        listenToUserInformationChange()
     }
     
+    func listenToUserInformationChange(){
+        let db = Firestore.firestore()
+
+        // Get a reference to the document that you just created
+        let docRef = db.collection("mukusers").document(self.defaults.string(forKey: "phone_number") ?? "")
+
+        // Listen for changes to the "registration" field
+        docRef.addSnapshotListener { snapshot, error in
+            guard let snapshot = snapshot else {
+                print("Error fetching document: \(error!)")
+                return
+            }
+            
+            //let registration = snapshot.data()?["registration"] as? String
+            print("Information changed")
+            
+            //self.dismiss(animated: true)
+            if let userData = snapshot.data() {
+                updateUserDefaultsInfo(userData: userData)
+            }
+            
+            self.displayUser()
+        }
+    }
     
     
     @objc func buy_card_action(_ sender:UITapGestureRecognizer){
@@ -137,7 +188,7 @@ class ProfileController: UIViewController {
     func uploadImage( image : UIImage ){
         
         
-        let storageRef = Storage.storage().reference().child("userProfilePhotos/\(defaults.string(forKey: "phone_number") ?? "" ).jpg")
+        let storageRef = Storage.storage().reference().child("userProfilePhotos/\(defaults.string(forKey: "phone_number") ?? "" )")
         if let imageData = image.jpegData(compressionQuality: 0.5) {
             let uploadTask = storageRef.putData(imageData, metadata: nil) { (metadata, error) in
                 guard let metadata = metadata else {
@@ -166,49 +217,6 @@ class ProfileController: UIViewController {
             }
         }
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        /*
-        
-        if let imageData = image.jpegData(compressionQuality: 0.5) {
-            
-            let storageRef = Storage.storage().reference()
-                .child("userProfilePhotos/\(defaults.string(forKey: "phone_number") ?? "" )")
-            
-            let uploadTask = storageRef.putData(imageData, metadata: nil) { (metadata, error) in
-                guard let metadata = metadata else {
-                    print("Upload failed:", error?.localizedDescription ?? "Unknown error")
-                    return
-                }
-                let downloadURL = metadata.downloadURL()
-                print("Upload succeeded:", downloadURL ?? "No URL")
-            }
-            
-            uploadTask.observe(.progress) { snapshot in
-                guard let progress = snapshot.progress else { return }
-                let percentComplete = Double(progress.completedUnitCount) / Double(progress.totalUnitCount)
-                let percentString = String(format: "%.0f%%", percentComplete * 100)
-                print("Upload progress:", percentString)
-            }
-            
-            uploadTask.observe(.success) { snapshot in
-                print("Upload completed successfully")
-            }
-            
-            uploadTask.observe(.failure) { snapshot in
-                if let error = snapshot.error {
-                    print("Upload failed:", error.localizedDescription)
-                }
-            }
-        }*/
-        
     }
 
     func compressImage(image: UIImage?, compressionQuality: CGFloat) -> UIImage? {
@@ -233,7 +241,6 @@ class ProfileController: UIViewController {
     let defaults = UserDefaults.standard
     
     func displayUser(){
-        print("displayUser")
         
         uiPhoneNumber.text = defaults.string(forKey: "phone_number")
         name.text = "\(defaults.string(forKey: "firstname") ?? "") \(defaults.string(forKey: "surname") ?? "")".trimmingCharacters(in: .whitespaces)
@@ -244,7 +251,22 @@ class ProfileController: UIViewController {
         
         if let profile_picture = defaults.string(forKey: "profile_picture") {
             if profile_picture.isEmpty == false {
-                self.profile_picture.image = ConvertBase64StringToImage(imageBase64String: profile_picture)
+                //self.profile_picture.image = ConvertBase64StringToImage(imageBase64String: profile_picture)
+            }
+        }
+        
+        //GET UPLOADED IMAGE
+        let storageRef = Storage.storage().reference()
+        let imageRef = storageRef.child("userProfilePhotos/\(defaults.string(forKey: "phone_number") ?? "" )")
+        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                print("Error downloading image: \(error.localizedDescription)")
+            } else {
+                if let image = UIImage(data: data!){
+                    self.profile_picture.setImage(image)
+                }else{
+                    print( "Image Has Issues" )
+                }
             }
         }
         

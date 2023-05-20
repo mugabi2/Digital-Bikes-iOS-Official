@@ -50,11 +50,13 @@ class DigitalTimePacksController: UIViewController {
     }
     
     
+    var current_digital_time = "0"
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
             btn500.layer.cornerRadius = 10
         
@@ -80,6 +82,7 @@ class DigitalTimePacksController: UIViewController {
         
         self.uiactivity.stopAnimating()
         
+        current_digital_time = self.defaults.string(forKey: "digital_time") ?? "0"
         let email = self.defaults.string(forKey: "email") ?? ""
         let firstname = self.defaults.string(forKey: "firstname") ?? ""
         let surname = self.defaults.string(forKey: "surname") ?? ""
@@ -114,8 +117,9 @@ class DigitalTimePacksController: UIViewController {
     
     func incrementUserDigitalTime(){
         
-        let current_digital_time = self.defaults.string(forKey: "digital_time") ?? "0"
-        
+        print( "Adding- \(current_digital_time)" )
+        print( "Adding= \(digital_time)" )
+        print( "Adding+ \( Int( current_digital_time )! + Int( digital_time )! )")
         
         
         let dataOne : [String : String] = [
@@ -174,6 +178,9 @@ extension DigitalTimePacksController : FlutterwavePayProtocol {
     }
     
     func payWithFlutterwave(txRef: String, currency : String, amount : String ){
+        
+        print( digital_time )
+        print( digital_time_amount )
         
         let digital_time = self.defaults.string(forKey: "digital_time") ?? ""
         let email = self.defaults.string(forKey: "email") ?? ""

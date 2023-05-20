@@ -85,7 +85,10 @@ class HomeController: UIViewController, MKMapViewDelegate {
             //let registration = snapshot.data()?["registration"] as? String
             //print("Registration value changed to: \(registration ?? "nil")")
             
+            
             if let data = snapshot.data() {
+                
+                self.has_rented = data["has_rented"] as! String?
                 self.updateUserDefaults(userData: data)
             }
             
@@ -111,11 +114,14 @@ class HomeController: UIViewController, MKMapViewDelegate {
                 let userData = document.data()
                 self.updateUserDefaults(userData: userData)
                 
+                
+                print( userData )
+                
                 //self.registration = userData["registration"] as! String?
                 self.digital_time = userData["digital_time"] as! String?
                 self.has_rented = userData["has_rented"] as! String?
-                self.time_returned = userData["time_returned"] as! String?
-                self.time_taken = userData["time_taken"] as! String?
+                //self.time_returned = userData["time_returned"] as! String?
+                //self.time_taken = userData["time_taken"] as! String?
                 
                 if self.has_rented  == "yes" {
                     
@@ -126,7 +132,10 @@ class HomeController: UIViewController, MKMapViewDelegate {
                     self.pin = userData["pin"] as! String?
                     
                     //SHOW RETURN BIKE SCREEN
-                    showPopUpMessageHelper(controller: self, title: nil, message: "RETURN BIKE")
+                    //showPopUpMessageHelper(controller: self, title: nil, message: "RETURN BIKE")
+                    if let vc = UIStoryboard(name: "ReturnABike", bundle: nil).instantiateInitialViewController() {
+                        self.present(vc, animated: true)
+                    }
                     
                 }else{
                     
@@ -284,7 +293,9 @@ class HomeController: UIViewController, MKMapViewDelegate {
                 if self.has_rented  == "yes" {
                     
                     //SHOW RETURN BIKE SCREEN
-                    showPopUpMessageHelper(controller: self, title: "\(annotation.title ?? "")", message: "RETURN BIKE")
+                    if let vc = UIStoryboard(name: "ReturnABike", bundle: nil).instantiateInitialViewController() {
+                        self.present(vc, animated: true)
+                    }
                     
                 }else{
                     
@@ -315,7 +326,7 @@ class HomeController: UIViewController, MKMapViewDelegate {
                         
                     }else{
                         //no bike
-                        showPopUpMessageHelper(controller: self, title: "\(annotation.title ?? "")", message: "There is no Bike on this Station")
+                        showPopUpMessageHelper(controller: self, title: "\(annotationTitle ?? "")", message: "There is no Bike on this Station")
                     }
                     
                 }

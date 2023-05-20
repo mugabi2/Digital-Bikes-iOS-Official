@@ -281,7 +281,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3DB-sp-2c9">
                                 <rect key="frame" x="74.333333333333329" y="387.33333333333331" width="244.33333333333337" height="77.333333333333314"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Ltm-27-E7l">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Ltm-27-E7l">
                                         <rect key="frame" x="103.66666666666667" y="0.0" width="37.000000000000014" height="37"/>
                                         <color key="color" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
@@ -320,6 +320,9 @@
                         <outlet property="uiduration" destination="3YQ-ur-XiE" id="h0F-QL-kOc"/>
                         <outlet property="uiplansegmentedControl" destination="Ybj-Tn-qqZ" id="0yo-yb-rgT"/>
                         <outlet property="uiprice" destination="vGb-LI-0tI" id="Tt4-Pt-FC2"/>
+                        <outlet property="uistackview_main1" destination="1P9-sY-zM7" id="aDs-an-1qg"/>
+                        <outlet property="uistackview_main2" destination="K98-a5-oCr" id="ERY-V6-eVe"/>
+                        <outlet property="uistackview_requested" destination="3DB-sp-2c9" id="gu6-xb-dmJ"/>
                         <outlet property="uistation" destination="tNO-gy-12C" id="aJY-8z-pdc"/>
                     </connections>
                 </viewController>
